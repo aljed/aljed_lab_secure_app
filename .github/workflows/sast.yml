@@ -18,4 +18,5 @@ jobs:
             docker pull mixeway/scanner:latest
         - name: Run Scan
           run: |
-            docker run -e OSS_USERNAME=a.iskandar.j -e OSS_KEY=5ee00e354203fb42c06088024945b4087b0bb0e0  -e MIXEWAY_URL=https://hub.mixeway.io -e MIXEWAY_KEY=e028ce30-0be2-4d18-aaea-74fd2b74e1b2 -e MIXEWAY_PROJECT_ID=102 -e MODE=STANDALONE -e MIXEWAY_PROJECT_NAME=aljed_lab_secure_app  -e COMMIT_ID=${GITHUB_SHA} -e BRANCH=${GITHUB_REF} -v /opt/lab_sec_audit/sast:/opt/sources mixeway/scanner:latest
+            docker run -e OSS_USERNAME=a.iskandar.j -e OSS_KEY=5ee00e354203fb42c06088024945b4087b0bb0e0  -e MIXEWAY_URL=https://hub.mixeway.io -e MIXEWAY_KEY=e028ce30-0be2-4d18-aaea-74fd2b74e1b2 -e MIXEWAY_PROJECT_ID=102 -e MODE=STANDALONE -e MIXEWAY_PROJECT_NAME=aljed_lab_secure_app  -e COMMIT_ID=${GITHUB_SHA} -e BRANCH=${GITHUB_REF} -v ${GITHUB_WORKSPACE}:/opt/sources mixeway/scanner:latest
+
